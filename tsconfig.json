@@ -1,13 +1,21 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.json",
   "compilerOptions": {
+    "moduleResolution": "node",
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     },
     "lib": ["esnext", "dom"],
-    "types": ["@dcloudio/types"]
+    "types": [
+      "@dcloudio/types",
+      "@types/wechat-miniprogram", // 原生微信小程序类型
+      "@uni-helper/uni-app-types", // uni-app 组件类型
+      "uview-plus/types"
+    ],
+    "noImplicitAny": false,
+    "module": "ESNext",
+    "target": "ESNext"
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }
